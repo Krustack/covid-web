@@ -16,18 +16,20 @@
         height: 200vh;
       }
       .glassmorphism {
-        background-image: linear-gradient(45deg, #ffffff95 0%, #ffffff30 100%);
+        background-image: linear-gradient(45deg, #ffffff95 , #ffffff30 );
         backdrop-filter: blur(10px) saturate(100%);
         border: 1px solid rgba(255, 255, 255, 0.18);
       }
       .hero {
-        background-image: url("images/milad-fakurian-58Z17lnVS4U-unsplash.jpg");
-        background-color: #00000020;
+        
+        background:linear-gradient(to top, #00000030, #00000030), url("images/milad-fakurian-58Z17lnVS4U-unsplash.jpg");
         background-size: cover;
         background-repeat: no-repeat;
+        background-position: center;
         width: 100%;
         height: 100vh;
         position: relative;
+        overflow: hidden;
       }
       .hero > div {
         display: flex;
@@ -36,11 +38,16 @@
       }
       #hero-text {
         width: 50%;
-        margin: 0 auto;
         text-align: center;
         color: #fff;
         position: absolute;
         left: 0;
+        padding: 50px;
+        margin:16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 16px;
       }
       #hero-text button {
         background-color: #fff;
@@ -48,6 +55,7 @@
         padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
+        align-self: center;
       }
       #hero-text button:hover {
         background-color: #000;
@@ -67,7 +75,7 @@
   <body>
     <div class="hero">
       <nav
-        class="navbar navbar-expand-lg navbar-light glassmorphism sticky-top position-sticky"
+        class="navbar navbar-expand-lg navbar-light glassmorphism"
       >
         <a class="navbar-brand" href="#">Navbar</a>
         <button
@@ -95,8 +103,9 @@
           </ul>
         </div>
       </nav>
+
       <div>
-        <div id="hero-text">
+        <div id="hero-text" class="glassmorphism">
           <h1 class="text-center text-white">Welcome to my website</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam,
@@ -110,8 +119,7 @@
           <button>👇SEEN MORE💪</button>
         </div>
         <div id="hero-images">
-          <img src="images/virtual-reality.png" alt="" />
-          <h3 style="color:#fff">lสมมุติว่ารูปสวยและขยับได้นะ</h3>
+          <img src="images/meta.png" alt="" width="100%" />
         </div>
       </div>
     </div>
@@ -122,9 +130,8 @@
 
 
       window.addEventListener("scroll", () => {
-        let value = scrollY;
-        text.style.left = `-${value / 0.5}px`;
-        img.style.right = `-${value / 0.5}px`;
+        text.style.left = `-${scrollY}px`;
+        img.style.right = `-${scrollY}px`;
       });
     </script>
 
